@@ -3,7 +3,7 @@ const fs = require('fs');
 const qs = require('querystring');
 
 function GET(req, res) {
-	res.end(JSON.stringify(data));
+
 }
 
 function POST(req, res) {
@@ -16,16 +16,20 @@ function POST(req, res) {
 		fs.writeFile('./data.json', JSON.stringify(data), (err) => {
 			if (err) throw err;
 		});
-		res.end(JSON.stringify(d));
+		res.end(JSON.stringify({
+			success: true,
+			error: null,
+			data: d
+		}));
 	});
 }
 
-function PUT() {
-	
+function PUT(req, res) {
+
 }
 
-function DELETE() {
-	
+function DELETE(req, res) {
+
 }
 
 module.exports = {

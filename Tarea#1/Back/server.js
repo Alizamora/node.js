@@ -2,7 +2,16 @@ const http = require("http");
 const methods = require("./methods");
 
 const server = http.createServer((req, res) => {
-	methods[req.method](req, res);
+  if (methods[req.method]){
+    methods[req.method](req, res);
+  }else{
+    res.end(JSON.stringify({
+      success: false,
+      error: "Hay un error de algún tipo",
+      data: null
+    }));
+  }
+	
 });
 
 server.on("clientError", (err, socket) => {
