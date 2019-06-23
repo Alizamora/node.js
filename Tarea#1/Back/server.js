@@ -1,17 +1,13 @@
 const http = require("http");
 const methods = require("./methods");
+const { end } = require("./utilitary-functions");
 
 const server = http.createServer((req, res) => {
-  if (methods[req.method]){
+  if (methods[req.method]) {
     methods[req.method](req, res);
-  }else{
-    res.end(JSON.stringify({
-      success: false,
-      error: "Hay un error de algún tipo",
-      data: null
-    }));
+  } else {
+    end({ res, s: false, e: 'Server internal error' });
   }
-	
 });
 
 server.on("clientError", (err, socket) => {

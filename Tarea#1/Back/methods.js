@@ -1,27 +1,39 @@
-const data = require('./data.json');
 const fs = require('fs');
-const qs = require('querystring');
+const { end, body, coincidence } = require("./utilitary-functions");
+const brands = require("./brands.json");
 
 function GET(req, res) {
-
+	if (req.url === '/api/v1/cars') {
+		end({ d: brands });
+	} else {
+		end({ res, s: false, e: 'End Point not valid', st: 500 });
+	}
 }
 
+
+
 function POST(req, res) {
-	var newData = '';
-	req
-	.on('data', chunk => newData += chunk)
-	.on('end', () => {
-		var d = qs.parse(newData);
-		data.push(d);
-		fs.writeFile('./data.json', JSON.stringify(data), (err) => {
-			if (err) throw err;
-		});
-		res.end(JSON.stringify({
-			success: true,
-			error: null,
-			data: d
-		}));
-	});
+	if (req.url === '/api/v1/brands') {
+		body({ req }, d => {
+			let obj = {
+				id: brands.length,
+				name: d.name,
+				description: d.description
+			}
+			if (coincidence({ prop: "name", array: brands, val: d.name })) {
+				end({ res, s: false, e: 'name already registrer' });
+			} else {
+				brands.push(obj);
+				console.log(brands);
+				fs.writeFile('./brands.json', JSON.stringify(brands), (err) => {
+					if (err) throw new Error(err);
+				});
+				end({ res, d: brands });
+			}
+		})
+	} else {
+		end({ res, s: false, e: 'End Point not valid', st: 500 });
+	}
 }
 
 function PUT(req, res) {
@@ -33,8 +45,8 @@ function DELETE(req, res) {
 }
 
 module.exports = {
-  GET,
-  POST,
-  PUT,
-  DELETE
+	GET,
+	POST,
+	PUT,
+	DELETE
 };
