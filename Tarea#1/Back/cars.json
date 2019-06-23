@@ -7,6 +7,23 @@
 		"color": "",
 		"description": "",
 		"date": ""
-		
+	},
+	{
+		"id": 1,
+		"name": "Pantalones",
+		"brandId": 2,
+		"year": 1996,
+		"color": "green",
+		"description": "marca de pantalon",
+		"date": "23/5/2019"
+	},
+	{
+		"id": 5,
+		"name": "Pantalones",
+		"brandId": 2,
+		"year": 1996,
+		"color": "green",
+		"description": "marca de pantalon",
+		"date": "23/5/2019"
 	}
 ]

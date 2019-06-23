@@ -1,5 +1,5 @@
 const http = require("http");
-const methods = require("./methods");
+const methods = {PUT: require("./put"), GET:require("./get"), POST: require("./post"), DELETE: require("./delete")};
 const { end } = require("./utilitary-functions");
 
 const server = http.createServer((req, res) => {

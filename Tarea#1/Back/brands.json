@@ -3,5 +3,15 @@
 		"id": 0,
 		"name": "Super",
 		"description": "Pirulo"
+	},
+	{
+		"id": 1,
+		"name": "Sayayin ",
+		"description": "Pirulo"
+	},
+	{
+		"id": 2,
+		"name": "LOL",
+		"description": "Pirulo"
 	}
 ]

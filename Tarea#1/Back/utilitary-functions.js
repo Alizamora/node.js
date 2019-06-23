@@ -19,7 +19,7 @@ function body({ req }, f) {
 		});
 }
 
-function coincidence({prop, array, val}) {
+function coincidence({ prop, array, val }) {
 	let bool = false;
 	for (let i = 0; i < array.length; i++) {
 		if (array[i][prop] === val) {
