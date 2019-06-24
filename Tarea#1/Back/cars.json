@@ -1,15 +1,42 @@
 [
 	{
-		"id": 1,
-		"name": "",
-		"brandId": 1,
+		"id": 0,
+		"name": "Pantalones",
+		"brandId": 2,
 		"year": 1996,
-		"color": "",
-		"description": "",
-		"date": ""
+		"color": "green",
+		"description": "marca de pantalon",
+		"date": "23/5/2019"
 	},
 	{
 		"id": 1,
+		"name": "Pantalones",
+		"brandId": 2,
+		"year": 1996,
+		"color": "green",
+		"description": "marca de pantalon",
+		"date": "23/5/2019"
+	},
+	{
+		"id": 2,
+		"name": "Pantalones",
+		"brandId": 2,
+		"year": 1996,
+		"color": "green",
+		"description": "marca de pantalon",
+		"date": "23/5/2019"
+	},
+	{
+		"id": 3,
+		"name": "Pantalones",
+		"brandId": 2,
+		"year": 1996,
+		"color": "green",
+		"description": "marca de pantalon",
+		"date": "23/5/2019"
+	},
+	{
+		"id": 4,
 		"name": "Pantalones",
 		"brandId": 2,
 		"year": 1996,

@@ -30,5 +30,14 @@ function coincidence({ prop, array, val }) {
 	return bool;
 }
 
-module.exports = { end, body, coincidence };
+function isPath(url, str){
+	return new RegExp(`^(${str})`, 'gm').test(url);
+}
+
+function searchVar(req, key) {
+	let reg = new RegExp(`\\??&?(${key})=(\\w{0,})`, 'g').exec(req.url);
+	return reg ? reg[2] : reg;
+}
+
+module.exports = { end, body, coincidence, isPath };
 
