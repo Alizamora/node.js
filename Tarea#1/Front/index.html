@@ -1,0 +1,52 @@
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Tarea#1</title>
+</head>
+
+<body>
+	<h2>Post Brand</h2>
+	<form target="redirects" action="http://localhost:1996/api/v1/brands" method="post">
+		<label for="brandsBrandInput">
+			Brand
+			<input required type="text" id="brandsBrandInput" name="brand">
+		</label>
+		<!-- brand=input.value -->
+		<button type="submit">Post brand</button>
+	</form>
+
+	<h2>Create</h2>
+	<form target="redirects" action="http://localhost:1996/api/v1/cars" method="post">
+		<label for="brand">
+			Brand Id
+			<input required type="text" name="brandId" id="brand">
+		</label>
+		<label for="description">
+			Description
+			<input type="text" name="description" id="description">
+		</label>
+		<label for="name">
+			Name
+			<input required type="text" name="name" id="name">
+		</label>
+		<label for="color">
+			Color
+			<input required type="text" name="color" id="color">
+		</label>
+		<label for="year">
+			Year
+			<input required type="number" name="year" id="year">
+		</label>
+		<button type="submit">Create car</button>
+	</form>
+	<iframe name="redirects"></iframe>
+
+	<form action="">
+
+	</form>
+</body>
+
+</html>
