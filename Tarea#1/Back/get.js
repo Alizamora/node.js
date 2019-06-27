@@ -39,16 +39,19 @@ function GET(req, res) {
 		const page = +query(req, 'page');
 		const sortBy = query(req, 'sortBy');
 		const search = query(req, 'search');
+		console.log(search);
 		let array = [].concat(brands)
 			.splice(
 				Math.abs(page ? page - 1 : 0) * items, items);
 		if (search) {
-			array = array.map(o => {
+			let searchArray = [];
+			array.forEach(o => {
 				for (let key in o) {
-					o[key] += '';
-					if (o[key].indexOf(search) > -1) return o;
+					o[key] = (o[key] + '').toLowerCase();
+					if (o[key].indexOf(search.toLowerCase()) > -1) return searchArray.push(o);
 				}
 			});
+			array = searchArray;
 		}
 		if (sortBy) {
 			array = sort(sortBy ? sortBy : 'id', cars);
